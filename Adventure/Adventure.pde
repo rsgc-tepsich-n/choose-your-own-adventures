@@ -1,40 +1,55 @@
-void setup() {
-  // Create canvas to work on
-  size(500, 600);
-}
 //Variables for square
-int a = 50;
-int b = 100;
-int c = 160;
+int ab = 20;
+int bc = 60;
+int cd = 100;
+int de = 80;
+int ef = 70;
+int fg = 10;
+int gh = 50;
+int hi = 90;
 
 //Variables for speed
-int d = 3;
+int d = 1;
 int e = 5;
-int f = 4;
+float f = 0.1;
 int g = 7;
 int h = 2;
 int i = 1;
 int j = 7;
-int k = 10;
+float k = 0.5;
 int l = 3;
 int m = 7;
-int n = 10;
-int o = 8;
+int n = 1;
+int o = 1;
 int p = 3;
 int q = 1;
 int r = 5;
 int s = 6;
 int t = 7;
-int u = 9;
+int u = 3;
 int v = 7;
 int w = 1;
-int x = 10;
-int z = 15;
+int x = 7;
+int z = 4;
+int y = 4;
 
-//make square scoll down screen with variables
-float y = z;
+void setup() {
+  // Create canvas to work on
+  size(300, 600);
+} 
+
 void draw() {
+  //make square scoll down screen with variables
+  //Square 1
   background(100);
-  y += 2;
+  y += i;
   rect(30, 20 +y, 55, 100);
+
+  //Square 2
+  y += i;
+  rect(100, bc + y, 55, 100);
+  
+  //Square 3
+  y += f;
+  rect(200, cd + y, 55, 100);
 }
