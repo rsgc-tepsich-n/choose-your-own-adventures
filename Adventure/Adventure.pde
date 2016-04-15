@@ -1,21 +1,22 @@
 //Variables for square
 int ab = 20;
-int bc = 60;
-int cd = 100;
+float bc = 60;
+float cd = 100;
 int de = 80;
 int ef = 70;
 int fg = 10;
 int gh = 50;
-int hi = 90;
+float hi = 90;
 
 //Variables for speed
 int d = 1;
 int e = 5;
-float f = 0.1;
+float f = random(1, 7);
 int g = 7;
 int h = 2;
-int i = 1;
-int j = 7;
+float i = random(1, 7);
+float j = random(1, 7);
+;
 float k = 0.5;
 int l = 3;
 int m = 7;
@@ -42,14 +43,29 @@ void draw() {
   //make square scoll down screen with variables
   //Square 1
   background(100);
-  y += i;
-  rect(30, 20 +y, 55, 100);
+  hi=hi+ i;
+  rect(30, hi, 55, 100);
+  if (hi>600) {
+    hi=-100;
+    i = random(1, 7);
+  }
 
-  //Square 2
-  y += i;
-  rect(100, bc + y, 55, 100);
-  
-  //Square 3
-  y += f;
-  rect(200, cd + y, 55, 100);
-}
+
+    //Square 2
+    bc += j;
+    rect(100, bc, 55, 100);
+    if (bc>600) {
+      bc=-100;
+      j = random(1, 7);
+    }
+
+    //Square 3
+    cd=cd+ f;
+    rect(200, cd, 55, 100);
+
+    //when the why of the square is greeter than the butotm it puts it on the top
+    if (cd>600) {
+      cd=-100;
+      f = random(1, 7);
+    }
+  }
