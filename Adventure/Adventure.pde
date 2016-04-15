@@ -1,4 +1,18 @@
 //Variables for square
+//Variables using rect
+float rect1X = 30;
+float rect1Y = 90;
+float rect2X = 100;
+float rect2Y = 60;
+float rect3X = 200;
+float rect3Y = 100;
+
+//Variables for speed
+float a = random(2, 7);
+float b = random(2, 7);
+float c = random(2, 7);
+
+//have to delete these
 int ab = 20;
 float bc = 60;
 float cd = 100;
@@ -6,33 +20,12 @@ int de = 80;
 int ef = 70;
 int fg = 10;
 int gh = 50;
-float hi = 90;
 
-//Variables for speed
-int d = 1;
-int e = 5;
-float f = random(1, 7);
-int g = 7;
-int h = 2;
-float i = random(1, 7);
-float j = random(1, 7);
-;
-float k = 0.5;
-int l = 3;
-int m = 7;
-int n = 1;
-int o = 1;
-int p = 3;
-int q = 1;
-int r = 5;
-int s = 6;
-int t = 7;
-int u = 3;
-int v = 7;
-int w = 1;
-int x = 7;
-int z = 4;
-int y = 4;
+
+//when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
+int fillForSquareOne = 255;
+int fillForSquareTwo = 255;
+int fillForSquareThree = 255;
 
 void setup() {
   // Create canvas to work on
@@ -41,31 +34,43 @@ void setup() {
 
 void draw() {
   //make square scoll down screen with variables
+
   //Square 1
   background(100);
-  hi=hi+ i;
-  rect(30, hi, 55, 100);
-  if (hi>600) {
-    hi=-100;
-    i = random(1, 7);
+  rect1Y=rect1Y+ a;
+  fill(fillForSquareOne);
+  rect(rect1X, rect1Y, 55, 100);
+  //when the why of the square is greeter than the butotm it puts it on the top
+  if (rect1Y>600) {
+    rect1Y=-100;
+    a = random(1, 7);
   }
 
-
-    //Square 2
-    bc += j;
-    rect(100, bc, 55, 100);
-    if (bc>600) {
-      bc=-100;
-      j = random(1, 7);
-    }
-
-    //Square 3
-    cd=cd+ f;
-    rect(200, cd, 55, 100);
-
-    //when the why of the square is greeter than the butotm it puts it on the top
-    if (cd>600) {
-      cd=-100;
-      f = random(1, 7);
-    }
+  //Square 2
+  rect2Y += b;
+  fill(fillForSquareTwo);
+  rect(rect2X, rect2Y, 55, 100);
+  //when the why of the square is greeter than the butotm it puts it on the top
+  if (rect2Y>height) {
+    rect2Y=-100;
+    b = random(1, 7);
   }
+
+  //Square 3
+  rect3Y=rect3Y+ c;
+  fill(fillForSquareThree);
+  rect(rect3X, rect3Y, 55, 100);
+  //when the why of the square is greeter than the butotm it puts it on the top
+  if (rect3Y>height) {
+    rect3Y=-100;
+    c = random(1, 7);
+  }
+}
+//when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
+void mouseClicked() {
+  if (fillForSquareOne == 255) {
+    fillForSquareOne = 0;
+  } else {
+    fillForSquareOne = 255;
+  }
+}
