@@ -12,16 +12,6 @@ float a = random(2, 7);
 float b = random(2, 7);
 float c = random(2, 7);
 
-//have to delete these
-int ab = 20;
-float bc = 60;
-float cd = 100;
-int de = 80;
-int ef = 70;
-int fg = 10;
-int gh = 50;
-
-
 //when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
 int fillForSquareOne = 255;
 int fillForSquareTwo = 255;
@@ -65,12 +55,8 @@ void draw() {
     rect3Y=-100;
     c = random(1, 7);
   }
-}
-//when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
-void mouseClicked() {
-  if (fillForSquareOne == 255) {
-    fillForSquareOne = 0;
-  } else {
-    fillForSquareOne = 255;
-  }
+if(mouseClicked == true && mouseX > rect1X && mouseX < rect1Y + 55 && mouseY > rect1Y && mouseY < rect1Y +100){
+  fillForSquareOne=255;
+} else(______){
+  fillForSquareTwo = 255;
 }
