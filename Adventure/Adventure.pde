@@ -55,8 +55,14 @@ void draw() {
     rect3Y=-100;
     c = random(1, 7);
   }
-if(mouseClicked == true && mouseX > rect1X && mouseX < rect1Y + 55 && mouseY > rect1Y && mouseY < rect1Y +100){
-  fillForSquareOne=255;
-} else(______){
-  fillForSquareTwo = 255;
+}
+
+void mouseClicked () { 
+  if (mouseX > rect1X && mouseX < rect1Y + 55 && mouseY > rect1Y && mouseY < rect1Y +100) {
+    fillForSquareOne=0;
+  } else if (mouseX > rect2X && mouseX < rect2Y + 200 && mouseY > rect2Y && mouseY < rect2Y +255) {
+    fillForSquareTwo = 0;
+  } else if (mouseX > rect3X && mouseX < rect3Y + 250 && mouseY > rect3Y && mouseY < rect3Y +305) {
+    fillForSquareThree=0;
+  }
 }
