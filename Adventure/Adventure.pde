@@ -64,5 +64,8 @@ void mouseClicked () {
     fillForSquareTwo = 0;
   } else if (mouseX > rect3X && mouseX < rect3Y + 250 && mouseY > rect3Y && mouseY < rect3Y +305) {
     fillForSquareThree=0;
-  }
-}
+  }  
+   else if(________)
+   fillForSquareOne = 255;
+  
+    }
