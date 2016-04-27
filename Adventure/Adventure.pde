@@ -12,6 +12,12 @@ float a = random(2, 5);
 float b = random(2, 5);
 float c = random(2, 5);
 
+//Score Variable
+int Score = 0;
+//time should equal zero
+int time = 0;
+
+
 //when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
 int fillForSquareOne = 255;
 int fillForSquareTwo = 255;
@@ -58,6 +64,14 @@ void draw() {
     c = random(1, 5);
     fillForSquareThree = 255;
   }
+  // once a second
+  if (frameCount % 60 == 0) {
+    time += 1;
+    println(time);
+  }
+  
+  // show the time
+  text(time,250,50);
 }
 
 void mouseClicked () { 
@@ -81,4 +95,7 @@ void mouseClicked () {
   else if (rect3Y > 600) { 
     fillForSquareThree = 255;
   }
+  //Scoreboard
+  fill(0, 0, 0);
+  text("Score:" + Score, 400, 400);
 }
