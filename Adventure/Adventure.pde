@@ -8,9 +8,9 @@ float rect3X = 200;
 float rect3Y = 100;
 
 //Variables for speed
-float a = random(2, 7);
-float b = random(2, 7);
-float c = random(2, 7);
+float a = random(2, 5);
+float b = random(2, 5);
+float c = random(2, 5);
 
 //when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
 int fillForSquareOne = 255;
@@ -33,7 +33,8 @@ void draw() {
   //when the why of the square is greeter than the butotm it puts it on the top
   if (rect1Y>600) {
     rect1Y=-100;
-    a = random(1, 7);
+    a = random(1, 5);
+    fillForSquareOne = 255;
   }
 
   //Square 2
@@ -43,7 +44,8 @@ void draw() {
   //when the why of the square is greeter than the butotm it puts it on the top
   if (rect2Y>height) {
     rect2Y=-100;
-    b = random(1, 7);
+    b = random(1, 5);
+    fillForSquareTwo = 255;
   }
 
   //Square 3
@@ -53,7 +55,8 @@ void draw() {
   //when the why of the square is greeter than the butotm it puts it on the top
   if (rect3Y>height) {
     rect3Y=-100;
-    c = random(1, 7);
+    c = random(1, 5);
+    fillForSquareThree = 255;
   }
 }
 
@@ -64,8 +67,18 @@ void mouseClicked () {
     fillForSquareTwo = 0;
   } else if (mouseX > rect3X && mouseX < rect3Y + 250 && mouseY > rect3Y && mouseY < rect3Y +305) {
     fillForSquareThree=0;
-  }  
-   else if(________)
-   fillForSquareOne = 255;
-  
-    }
+  } 
+
+  //mkaes tile 1 turn white when reaches 600
+  else if (rect1Y > 600) { 
+    fillForSquareOne = 255;
+  }
+  //mkaes tile 2 turn white when reaches 600
+  else if (rect2Y > 600) { 
+    fillForSquareTwo = 255;
+  }
+  //mkaes tile 3 turn white when reaches 600
+  else if (rect3Y > 600) { 
+    fillForSquareThree = 255;
+  }
+}
