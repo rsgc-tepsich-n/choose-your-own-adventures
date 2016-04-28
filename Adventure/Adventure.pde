@@ -4,7 +4,7 @@ float rect1X = 30;
 float rect1Y = 90;
 float rect2X = 100;
 float rect2Y = 60;
-float rect3X = 200;
+float rect3X = 180;
 float rect3Y = 100;
 
 //Variables for speed
@@ -69,9 +69,11 @@ void draw() {
     time += 1;
     println(time);
   }
-  
+
   // show the time
-  text(time,250,50);
+  text(time, 270, 50);
+  fill(0);
+  text("Score: " +  Score, 250, 25);
 }
 
 void mouseClicked () { 
@@ -95,7 +97,4 @@ void mouseClicked () {
   else if (rect3Y > 600) { 
     fillForSquareThree = 255;
   }
-  //Scoreboard
-  fill(0, 0, 0);
-  text("Score:" + Score, 400, 400);
 }
