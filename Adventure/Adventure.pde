@@ -17,6 +17,7 @@ int Score = 0;
 //time should equal zero
 int time = 0;
 
+boolean startScreen = true;
 
 //when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
 int fillForSquareOne = 255;
@@ -26,54 +27,66 @@ int fillForSquareThree = 255;
 void setup() {
   // Create canvas to work on
   size(300, 600);
+  //Song
+  //file = new SoundFile(this, "________");
+  //file.play();
 } 
 
 void draw() {
   //make square scoll down screen with variables
 
-  //Square 1
-  background(100);
-  rect1Y=rect1Y+ a;
-  fill(fillForSquareOne);
-  rect(rect1X, rect1Y, 55, 100);
-  //when the why of the square is greeter than the butotm it puts it on the top
-  if (rect1Y>600) {
-    rect1Y=-100;
-    a = random(1, 5);
-    fillForSquareOne = 255;
-  }
+  //Start Screen
+  if (startScreen)
+  {
+    background(51);
+    fill(0, 102, 153);
+    text("PRESS SPACE TO START", 80, 300);
+  } else
+  {
+    //Square 1
+    background(100);
+    rect1Y=rect1Y+ a;
+    fill(fillForSquareOne);
+    rect(rect1X, rect1Y, 55, 100);
+    //when the why of the square is greeter than the butotm it puts it on the top
+    if (rect1Y>600) {
+      rect1Y=-100;
+      a = random(1, 5);
+      fillForSquareOne = 255;
+    }
 
-  //Square 2
-  rect2Y += b;
-  fill(fillForSquareTwo);
-  rect(rect2X, rect2Y, 55, 100);
-  //when the why of the square is greeter than the butotm it puts it on the top
-  if (rect2Y>height) {
-    rect2Y=-100;
-    b = random(1, 5);
-    fillForSquareTwo = 255;
-  }
+    //Square 2
+    rect2Y += b;
+    fill(fillForSquareTwo);
+    rect(rect2X, rect2Y, 55, 100);
+    //when the why of the square is greeter than the butotm it puts it on the top
+    if (rect2Y>height) {
+      rect2Y=-100;
+      b = random(1, 5);
+      fillForSquareTwo = 255;
+    }
 
-  //Square 3
-  rect3Y=rect3Y+ c;
-  fill(fillForSquareThree);
-  rect(rect3X, rect3Y, 55, 100);
-  //when the why of the square is greeter than the butotm it puts it on the top
-  if (rect3Y>height) {
-    rect3Y=-100;
-    c = random(1, 5);
-    fillForSquareThree = 255;
-  }
-  // once a second
-  if (frameCount % 60 == 0) {
-    time += 1;
-    println(time);
-  }
+    //Square 3
+    rect3Y=rect3Y+ c;
+    fill(fillForSquareThree);
+    rect(rect3X, rect3Y, 55, 100);
+    //when the why of the square is greeter than the butotm it puts it on the top
+    if (rect3Y>height) {
+      rect3Y=-100;
+      c = random(1, 5);
+      fillForSquareThree = 255;
+    }
+    // once a second
+    if (frameCount % 60 == 0) {
+      time += 1;
+      println(time);
+    }
 
-  // show the time
-  text(time, 270, 50);
-  fill(0);
-  text("Score: " +  Score, 250, 25);
+    // show the time
+    text(time, 270, 50);
+    fill(0);
+    text("Score: " +  Score, 250, 25);
+  }
 }
 
 void mouseClicked () { 
@@ -97,4 +110,10 @@ void mouseClicked () {
   else if (rect3Y > 600) { 
     fillForSquareThree = 255;
   }
+  
+}
+//Key Pressed for start screen
+void keyPressed()
+{
+  if (key == ' ')startScreen = false;
 }
