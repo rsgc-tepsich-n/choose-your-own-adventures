@@ -1,3 +1,6 @@
+//Sound File
+import processing.sound.*;
+
 //Variables for square
 //Variables using rect
 float rect1X = 30;
@@ -17,6 +20,10 @@ int Score = 0;
 //time should equal zero
 int time = 0;
 
+//Sound File
+SoundFile file;
+
+//start screen
 boolean startScreen = true;
 
 //when click your mouse if your fill value is 255 make the value be 0 otherwise make the value white agian
@@ -27,9 +34,10 @@ int fillForSquareThree = 255;
 void setup() {
   // Create canvas to work on
   size(300, 600);
-  //Song
-  //file = new SoundFile(this, "________");
-  //file.play();
+
+  // Load a soundfile from the /data folder of the sketch and play it back
+  file = new SoundFile(this, "PianoTiles.mp3");
+  file.play();
 } 
 
 void draw() {
@@ -81,39 +89,46 @@ void draw() {
       time += 1;
       println(time);
     }
-
     // show the time
     text(time, 270, 50);
     fill(0);
     text("Score: " +  Score, 250, 25);
+  }
+  //When tile 1 is white when reaches 600 game over
+  println(fillForSquareOne);
+  if (fillForSquareOne == 255 && 
+    rect1Y > 600) { 
+    exit();
   }
 }
 
 void mouseClicked () { 
   if (mouseX > rect1X && mouseX < rect1Y + 55 && mouseY > rect1Y && mouseY < rect1Y +100) {
     fillForSquareOne=0;
-  } else if (mouseX > rect2X && mouseX < rect2Y + 200 && mouseY > rect2Y && mouseY < rect2Y +255) {
+  } 
+  if (mouseX > rect2X && mouseX < rect2Y + 200 && mouseY > rect2Y && mouseY < rect2Y +255) {
     fillForSquareTwo = 0;
-  } else if (mouseX > rect3X && mouseX < rect3Y + 250 && mouseY > rect3Y && mouseY < rect3Y +305) {
+  } 
+  if (mouseX > rect3X && mouseX < rect3Y + 250 && mouseY > rect3Y && mouseY < rect3Y +305) {
     fillForSquareThree=0;
   } 
 
-  //mkaes tile 1 turn white when reaches 600
-  else if (rect1Y > 600) { 
+  //make tile 1 turn white when reaches 600
+  if (rect1Y > 600) { 
     fillForSquareOne = 255;
   }
-  //mkaes tile 2 turn white when reaches 600
-  else if (rect2Y > 600) { 
+  //make tile 2 turn white when reaches 600
+  if (rect2Y > 600) { 
     fillForSquareTwo = 255;
   }
-  //mkaes tile 3 turn white when reaches 600
-  else if (rect3Y > 600) { 
+  //make tile 3 turn white when reaches 600
+  if (rect3Y > 600) { 
     fillForSquareThree = 255;
   }
-  
 }
 //Key Pressed for start screen
 void keyPressed()
 {
+  // KeyPressed for start screen
   if (key == ' ')startScreen = false;
 }
