@@ -57,7 +57,7 @@ void draw() {
     fill(fillForSquareOne);
     rect(rect1X, rect1Y, 55, 100);
     //when the why of the square is greeter than the butotm it puts it on the top
-    if (rect1Y>600) {
+    if (rect1Y>605) {
       rect1Y=-100;
       a = random(1, 5);
       fillForSquareOne = 255;
@@ -68,7 +68,7 @@ void draw() {
     fill(fillForSquareTwo);
     rect(rect2X, rect2Y, 55, 100);
     //when the why of the square is greeter than the butotm it puts it on the top
-    if (rect2Y>height) {
+    if (rect2Y>height+5) {
       rect2Y=-100;
       b = random(1, 5);
       fillForSquareTwo = 255;
@@ -79,7 +79,7 @@ void draw() {
     fill(fillForSquareThree);
     rect(rect3X, rect3Y, 55, 100);
     //when the why of the square is greeter than the butotm it puts it on the top
-    if (rect3Y>height) {
+    if (rect3Y>height+5) {
       rect3Y=-100;
       c = random(1, 5);
       fillForSquareThree = 255;
@@ -94,10 +94,15 @@ void draw() {
     fill(0);
     text("Score: " +  Score, 250, 25);
   }
-  //When tile 1 is white when reaches 600 game over
+  //When tile 1,2,3 is white when reaches 600 game over
   println(fillForSquareOne);
-  if (fillForSquareOne == 255 && 
-    rect1Y > 600) { 
+  if (fillForSquareOne == 255 && rect1Y > 600) { 
+    exit();
+  }
+    if (fillForSquareTwo == 255 && rect2Y > 600) { 
+    exit();
+  }
+    if (fillForSquareThree == 255 && rect3Y > 600) { 
     exit();
   }
 }
@@ -114,15 +119,15 @@ void mouseClicked () {
   } 
 
   //make tile 1 turn white when reaches 600
-  if (rect1Y > 600) { 
+  if (rect1Y > 601) { 
     fillForSquareOne = 255;
   }
   //make tile 2 turn white when reaches 600
-  if (rect2Y > 600) { 
+  if (rect2Y > 601) { 
     fillForSquareTwo = 255;
   }
   //make tile 3 turn white when reaches 600
-  if (rect3Y > 600) { 
+  if (rect3Y > 601) { 
     fillForSquareThree = 255;
   }
 }
