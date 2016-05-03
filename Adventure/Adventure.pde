@@ -1,7 +1,6 @@
 //Sound File
 import processing.sound.*;
 
-//Variables for square
 //Variables using rect
 float rect1X = 30;
 float rect1Y = 90;
@@ -99,10 +98,10 @@ void draw() {
   if (fillForSquareOne == 255 && rect1Y > 600) { 
     exit();
   }
-    if (fillForSquareTwo == 255 && rect2Y > 600) { 
+  if (fillForSquareTwo == 255 && rect2Y > 600) { 
     exit();
   }
-    if (fillForSquareThree == 255 && rect3Y > 600) { 
+  if (fillForSquareThree == 255 && rect3Y > 600) { 
     exit();
   }
 }
@@ -137,3 +136,7 @@ void keyPressed()
   // KeyPressed for start screen
   if (key == ' ')startScreen = false;
 }
+
+//Work Cited
+// https://processing.org/reference/libraries/sound/SoundFile.html
+// https://processing.org/reference/boolean.html
